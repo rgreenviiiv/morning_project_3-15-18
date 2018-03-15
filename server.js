@@ -2,8 +2,13 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5150
 
+app.set('view engine', 'ejs');
+
+app.use(express.static(__dirname + '/public'));
+
+
 app.get('/', (req,res)=>{
-  res.send('Hello');
+  res.render('index');
 })
 
 app.get('/about',(req,res)=>{
@@ -14,4 +19,8 @@ app.get('/contact',(req,res)=>{
 })
 app.get('/subscribe',(req,res)=>{
   res.send('Please subscribe to this page')
+
+})
+app.listen(PORT, ()=>{
+  console.log(`listening on ${PORT}`);
 })
