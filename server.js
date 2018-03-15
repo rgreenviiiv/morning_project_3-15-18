@@ -15,3 +15,6 @@ app.get('/contact',(req,res)=>{
 app.get('/subscribe',(req,res)=>{
   res.send('Please subscribe to this page')
 })
+app.listen(PORT, ()=>{
+  console.log(`listening on ${PORT}`)
+});
